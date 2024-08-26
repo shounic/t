@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Timestamp Converter</title>
+</head>
+<body>
+    <h1>Unix Timestamp Converter</h1>
+    
+    <!-- Placeholders to display the timestamp, human-readable date, and timezone -->
+    <p>The Unix timestamp is: <span id="unixTimestamp"></span></p>
+    <p>The human-readable date is: <span id="readableDate"></span>
+    The detected timezone is: <span id="timezone"></span></p>
+    
+    <script>
+        // Example Unix timestamp (in seconds)
+        var unixTimestamp = 1693000000; // Replace with your timestamp
+
+        // Convert Unix timestamp to milliseconds
+        var date = new Date(unixTimestamp * 1000);
+
+        // Get the user's local timezone formatted date string
+        var readableDate = date.toLocaleString();
+
+        // Get the user's timezone name
+        var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Display the Unix timestamp, human-readable date, and detected timezone
+        document.getElementById('unixTimestamp').textContent = unixTimestamp;
+        document.getElementById('readableDate').textContent = readableDate;
+        document.getElementById('timezone').textContent = timezone;
+    </script>
+</body>
+</html>
