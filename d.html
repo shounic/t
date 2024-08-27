@@ -16,7 +16,7 @@
     <p>there can currently only be: <strong><span class="numAllowed"></span></strong> people with hat privileges</p>
     <p><a id="personA" href="#">Person 1</a> <a id="personB" href="#">Person 2</a> <a id="personC" href="#">Person 3</a>
         <a id="personD" href="#">Person 4</a> <a id="personE" href="#">Person 5</a></p>
-    <p>Last Updated: <span id="readableDate"></span>
+    <p>Last Updated: <span id="timesince"></span> - <span id="readableDate"></span>
         (<span id="timezone"></span>)</p>
     <br>
     <p style="font-size: 85%;">this website updates every XX:01 or XX:31 of the clock</p>
@@ -47,7 +47,7 @@ var minD = 7.39;
 
         // 🟥
         // LAST UPDATED TIMESTAMP
-var unixTimestamp = 1724792491;
+var unixTimestamp = 1724794293;
 
         // Convert Unix timestamp to milliseconds
         var date = new Date(unixTimestamp * 1000);
@@ -107,6 +107,39 @@ var person5var = '76561199481496697';
         if (person5var == '') {
             document.getElementById('personE').textContent = '';
         }
+
+        function timeSince(unixTimestamp) {
+            const seconds = Math.floor((new Date() - new Date(unixTimestamp * 1000)) / 1000);
+
+            let interval = Math.floor(seconds / 31536000);
+            if (interval >= 1) {
+                return interval + (interval === 1 ? " year ago" : " years ago");
+            }
+
+            interval = Math.floor(seconds / 2592000);
+            if (interval >= 1) {
+                return interval + (interval === 1 ? " month ago" : " months ago");
+            }
+
+            interval = Math.floor(seconds / 86400);
+            if (interval >= 1) {
+                return interval + (interval === 1 ? " day ago" : " days ago");
+            }
+
+            interval = Math.floor(seconds / 3600);
+            if (interval >= 1) {
+                return interval + (interval === 1 ? " hour ago" : " hours ago");
+            }
+
+            interval = Math.floor(seconds / 60);
+            if (interval >= 1) {
+                return interval + (interval === 1 ? " minute ago" : " minutes ago");
+            }
+
+            return Math.floor(seconds) + (seconds === 1 ? " second ago" : " seconds ago");
+        }
+        document.getElementById('timesince').innerText = timeSince(unixTimestamp);
+
     </script>
 </body>
 
