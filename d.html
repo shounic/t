@@ -1,35 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unix Timestamp Converter</title>
+    <title>trenches cosmetics cutoff</title>
 </head>
-<body>
-    <h1>Unix Timestamp Converter</h1>
-    
+
+<body style="font-family: sans-serif;text-align: center;margin-top: 4%;font-size: 140%;">
+    <h1 style="line-height: 80%;">trenches cosmetics cutoff</h1>
+    <!-- <h3>Top Donator: $<span id="topD"></span></h3> -->
+    <h3>Donate more than this to get hats: $<span id="minD"></span></h3>
     <!-- Placeholders to display the timestamp, human-readable date, and timezone -->
-    <p>The Unix timestamp is: <span id="unixTimestamp"></span></p>
-    <p>The human-readable date is: <span id="readableDate"></span>
-    The detected timezone is: <span id="timezone"></span></p>
-    
+    <!-- <p>The Unix timestamp is: <span id="unixTimestamp"></span></p> -->
+    <p>there can currently only be: <strong><span class="numAllowed"></span></strong> people with hat privileges</p>
+    <p><a id="personA" href="#">Person 1</a> <a id="personB" href="#">Person 2</a> <a id="personC" href="#">Person 3</a>
+        <a id="personD" href="#">Person 4</a> <a id="personE" href="#">Person 5</a></p>
+    <p>Last Updated: <span id="readableDate"></span>
+        (<span id="timezone"></span>)</p>
+    <br>
+    <p style="font-size: 85%;">this website updates every XX:01 or XX:31 of the clock</p>
+    <p style="font-size: 85%;">whoever are the top <strong><span class="numAllowed"></span></strong> at the moment it
+        updates will be granted the hat privileges</p>
+    <p style="font-size: 85%;">the tf2 server is updated every XX:01 & XX:31, rechecks who the top <strong><span class="numAllowed"></span></strong> are every map</p>
+    <br>
+    <span style="font-size: 80%;line-height: 80%;">
+        <p>TF2 crashes when there are too many objects at one time.</p>
+        <p>this is why nobody has hats: to cut down on how many objects</p>
+        <p>are being used, so we can at least play the video game.</p>
+        <br>
+        <p>but i'm not going to keep running the server if i'm losing money on it</p>
+        <p>so the top <strong><span class="numAllowed"></span></strong> donators will get to wear hats.</p>
+        <p>this is a safe number that shouldn't cause any problems.</p>
+        <p>worst case scenario the object limit protector will eat their hats and move on</p>
+    </span>
+
     <script>
-        // Example Unix timestamp (in seconds)
-        var unixTimestamp = 1693000000; // Replace with your timestamp
+
+        // 🟥
+var topD = 300;
+        //document.getElementById('topD').textContent = topD;
+
+        // 🟥
+var minD = 10;
+        document.getElementById('minD').textContent = minD;
+
+        // 🟥
+        // LAST UPDATED TIMESTAMP
+var unixTimestamp = 1724720283;
 
         // Convert Unix timestamp to milliseconds
         var date = new Date(unixTimestamp * 1000);
 
-        // Get the user's local timezone formatted date string
-        var readableDate = date.toLocaleString();
+        // Format the date and time as "date, 3-letter month, year, hour:minute:second"
+        var options = {
+            weekday: 'long', // e.g., 'Monday'
+            day: '2-digit', // e.g., '26'
+            month: 'short', // e.g., 'Aug'
+            year: 'numeric', // e.g., '2023'
+            hour: '2-digit', // e.g., '14'
+            minute: '2-digit', // e.g., '30'
+            second: '2-digit', // e.g., '45'
+            timeZoneName: 'short' // e.g., 'GMT', 'PDT'
+        };
+        var readableDate = date.toLocaleString('default', options);
 
         // Get the user's timezone name
         var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         // Display the Unix timestamp, human-readable date, and detected timezone
-        document.getElementById('unixTimestamp').textContent = unixTimestamp;
+        //document.getElementById('unixTimestamp').textContent = unixTimestamp;
         document.getElementById('readableDate').textContent = readableDate;
         document.getElementById('timezone').textContent = timezone;
+
+        var num_allowed = 5;
+        var numAllowedElements = document.querySelectorAll('.numAllowed');
+        numAllowedElements.forEach(function (element) {
+            element.textContent = num_allowed;
+        });
+
+        // 🟥
+        // JavaScript variable holding part of the URL
+        var baseURL = 'http://steamcommunity.com/profiles/';
+var person1var = '76561198012945016';
+var person2var = '76561198012945016';
+var person3var = '76561198012945016';
+var person4var = '76561198012945016';
+var person5var = '76561198012945016';
+
+        // Set the href attribute of the link with the dynamic URL
+        document.getElementById('personA').href = baseURL + person1var;
+        document.getElementById('personB').href = baseURL + person2var;
+        document.getElementById('personC').href = baseURL + person3var;
+        document.getElementById('personD').href = baseURL + person4var;
+        document.getElementById('personE').href = baseURL + person5var;
+
+        if (person2var == '') {
+            document.getElementById('personB').textContent = '';
+        }
+        if (person3var == '') {
+            document.getElementById('personC').textContent = '';
+        }
+        if (person4var == '') {
+            document.getElementById('personD').textContent = '';
+        }
+        if (person5var == '') {
+            document.getElementById('personE').textContent = '';
+        }
     </script>
 </body>
+
 </html>
