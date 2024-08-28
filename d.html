@@ -16,7 +16,7 @@
     <p>there can currently only be: <strong><span class="numAllowed"></span></strong> people with hat privileges</p>
     <p><a id="personA" href="#">Person 1</a> <a id="personB" href="#">Person 2</a> <a id="personC" href="#">Person 3</a>
         <a id="personD" href="#">Person 4</a> <a id="personE" href="#">Person 5</a></p>
-    <p>Last Updated: <span id="timesince"></span> - <span id="readableDate"></span>
+    <span style="font-size: 85%;line-height: 80%;"><p>(if there are less than 5 people with hat permissions then it means enough people tied</p><p>that it's past capacity and someone who is tied needs to tie break)</p></span><p>Last Updated: <span id="timesince"></span> - <span id="readableDate"></span>
         (<span id="timezone"></span>)</p>
     <br>
     <p style="font-size: 85%;">this website updates every XX:01 or XX:31 of the clock</p>
@@ -47,7 +47,7 @@ var minD = 11.01;
 
         // 🟥
         // LAST UPDATED TIMESTAMP
-var unixTimestamp = 1724876183;
+var unixTimestamp = 1724876431;
 
         // Convert Unix timestamp to milliseconds
         var date = new Date(unixTimestamp * 1000);
