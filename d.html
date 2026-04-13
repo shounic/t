@@ -32,22 +32,23 @@
         <p>but sorry i'm also not going to keep running the server if i'm losing money on it</p>
         <p>so the top <strong><span class="numAllowed"></span></strong> donators will get to wear hats :)</p>
         <p>the amount of objects added from this aren't enough to cause any issues so it will be ok!</p>
+        <!-- <p>worst case scenario the object limit protector will eat their hats and move on</p> -->
     </span>
 
     <script>
 
         // 🟥
 var topD = 0;
-var topD = 0;
+        //document.getElementById('topD').textContent = topD;
 
         // 🟥
-var minD = 70.0;
 var minD = 77.0;
+        document.getElementById('minD').textContent = minD;
 
         // 🟥
         // LAST UPDATED TIMESTAMP
-var unixTimestamp = 1775881877;
-var unixTimestamp = 1776088888;
+var unixTimestamp = 1776090691;
+
         // Convert Unix timestamp to milliseconds
         var date = new Date(unixTimestamp * 1000);
 
@@ -82,11 +83,11 @@ var unixTimestamp = 1776088888;
         // JavaScript variable holding part of the URL
         var baseURL = 'http://steamcommunity.com/profiles/';
 var person1var = '76561198081914557';
-var person1var = '76561198081914557';
 var person2var = '76561199081243673';
 var person3var = '76561198322697803';
 var person4var = '76561198109870794';
 var person5var = '76561199078576106';
+
         // Set the href attribute of the link with the dynamic URL
         document.getElementById('personA').href = baseURL + person1var;
         document.getElementById('personB').href = baseURL + person2var;
